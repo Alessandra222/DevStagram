@@ -13,13 +13,15 @@ class PostController extends Controller
         $this->middleware('auth');
     }
 
+
     public function index(User $user)
     {
+        $posts = Post::where('user_id', $user->id)->get();
 
-        dd($user->id);
-    
+        //Enviando los datos a la vista
         return view('dashboard',[
-            'user'=> $user
+            'user'=> $user,
+            'posts' => $posts
         ]);
     }
 
@@ -52,12 +54,12 @@ class PostController extends Controller
         // $post->imagen=$request->imagen;
         // $post->user_id= auth()->user()->id;
 
-        $request->user()->posts()->create([
-            'titulo'=> $request->titulo,
-            'descripcion' => $request->descripcion,
-            'imagen'=> $request->imagen,
-            'user_id'=>auth()->user()->id
-        ]);
+        // $request->user()->posts()->create([
+        //     'titulo'=> $request->titulo,
+        //     'descripcion' => $request->descripcion,
+        //     'imagen'=> $request->imagen,
+        //     'user_id'=>auth()->user()->id
+        // ]);
 
         return redirect()->route('posts.index', auth()->user()->username);
     }

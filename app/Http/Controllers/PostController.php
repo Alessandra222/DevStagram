@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\File; 
 
 
 class PostController extends Controller
@@ -78,8 +79,17 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
+        //Comprueba si esta autorizado para eliminar
         $this->authorize('delete', $post);
         $post->delete();
+
+        //Eliminar la pagina
+        $imagen_path = public_path('uploads/' . $post->imagen);
+
+        if(File::exists($imagen_path)){
+            File::delete($imagen_path);
+
+        }
 
         return redirect()->route('posts.index', auth()->user()->username);
     }

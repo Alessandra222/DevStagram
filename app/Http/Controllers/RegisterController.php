@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
+    public function __construct()
+    {
+        // Añadir middleware 'guest' para que los usuarios logueados no accedan a la página de login
+        $this->middleware('guest')->except('store');  // Exceptuamos el método store porque ese es el que procesa el login
+    }
     public function index() 
     {
         return view('auth.register');
@@ -27,7 +33,7 @@ class RegisterController extends Controller
         'name' => $request->name,
         'username' => Str::slug($request->username),
         'email' => $request->email,
-        'password' => $request->password
+        'password' => Hash::make($request->password) 
     ]);
 
     //Autenticar usuarios

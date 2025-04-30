@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
@@ -11,9 +12,10 @@ use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ComentarioController;
 
-Route::get('/', function () {
+Route::get('/', HomeController::class)->name('home'); 
+/*Route::get('/', function () {
     return view('principal');
-});
+}); //routing tipo closure */
 
 Route::get('/crear-cuenta', [RegisterController::class,'index'])->name('register');
 Route::post('/crear-cuenta', [RegisterController::class,'store']);

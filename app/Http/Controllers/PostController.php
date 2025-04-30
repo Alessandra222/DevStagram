@@ -21,7 +21,7 @@ class PostController extends Controller
     public function index(User $user) //Traer los post asociados al usario que se visita
     //Carga una vista específica y pasa las variables que esa vista va a necesitar para mostrar contenido dinámico.
     {
-        $posts = Post::where('user_id', $user->id)->paginate(20);
+        $posts = Post::where('user_id', $user->id)->latest()->paginate(20);
 
         //Enviando los datos a la vista
         return view('dashboard',[

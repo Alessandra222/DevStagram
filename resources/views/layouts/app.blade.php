@@ -10,13 +10,15 @@
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
 
+        @livewireStyles
+
     </head>
     <body class="bg-gray-300">
         <header class="p-5 border-b bg-white shadow">
             <div class="container mx-auto flex justify-between">
-            <h1 class="text-3xl font-black">
+            <a href="{{route('home')}}" class="text-3xl font-black">
                 DevStagram
-            </h1>
+            </a>
 
             @auth
             <nav class="flex gap-4 items-center">
@@ -66,5 +68,7 @@
             Devstagram - Todos los derechos reservados {{ now() ->year}}
 
         </footer>
+        @livewireScripts
+
     </body>
 </html>

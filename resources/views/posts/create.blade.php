@@ -71,7 +71,7 @@
                 <input
                     type="submit"
                     value="Crear publicacion"
-                    class="bg-cyan-600 hover:bg-cyan-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"/>
+                    class="bg-red-400 hover:bg-red-500 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"/>
             </form>
         </div>
     </div>

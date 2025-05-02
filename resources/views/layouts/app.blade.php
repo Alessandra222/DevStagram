@@ -13,10 +13,10 @@
         @livewireStyles
 
     </head>
-    <body class="bg-gray-300">
-        <header class="p-5 border-b bg-white shadow">
+    <body class="bg-[#feeeee]">
+        <header class="p-5  bg-white shadow">
             <div class="container mx-auto flex justify-between">
-            <a href="{{route('home')}}" class="text-3xl font-black">
+            <a href="{{route('home')}}" class="text-3xl font-black text-[#93353e] italic">
                 DevStagram
             </a>
 
@@ -46,9 +46,10 @@
             @endauth
 
             @guest
-            <nav class="flex gab-2 items-center">
-                <a class="font-bold uppercase text-gray-600 text-sm" href="{{route('login')}}">Login</a>
-                <a class="font-bold uppercase text-gray-600 text-sm" href="{{route('register')}}">Crear cuenta
+            <nav class="flex gap-2 items-center">
+                <a class="font-bold uppercase  text-[#93353e]
+           text-sm" href="{{route('login')}}">Login</a>
+                <a class="font-bold uppercase text-[#93353e] text-sm" href="{{route('register')}}">Crear cuenta
                 </a>
             </nav>
             @endguest
@@ -58,13 +59,14 @@
 
         </header>
         <main class="container mx-auto mt-10">
-            <h2 class="font-black text-center text-3xl mb-10">
+            <h2 class="font-black text-center text-3xl mb-10 text-[#93353e] italic">
                 @yield('titulo')
             </h2>
             @yield('contenido')
 
         </main>
-        <footer class="mt-10 text-center p-5 text-shadow-gray-500 font-bold uppercase">
+        <footer class="mt-20 text-center p-5  bg-gradient-to-r from-[#93353e] to-[#e58e73] 
+           bg-clip-text text-transparent font-bold uppercase">
             Devstagram - Todos los derechos reservados {{ now() ->year}}
 
         </footer>

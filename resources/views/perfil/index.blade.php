@@ -105,7 +105,7 @@
                 <input
                     type="submit"
                     value="Guardar Cambios"
-                    class="bg-indigo-500 hover:bg-indigo-600 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"/>
+                    class="bg-red-400 hover:bg-red-500 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"/>
 
             </form>
         </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Inicia sesion en DevStagram
+    DevStagram
 @endsection
 
 @section('contenido')
@@ -21,6 +21,7 @@
                 @endif
 
                 <div class="mb-5">
+                    {{--<h1>DevStagram</h1> --}}
                     <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">
                         Email
                     </label>
@@ -63,7 +64,7 @@
                 <input
                     type="submit"
                     value="Inicia Sesion"
-                    class="bg-cyan-600 hover:bg-cyan-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"/>
+                    class="bg-red-400 hover:bg-red-500 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"/>
             </form>
         </div>
 
